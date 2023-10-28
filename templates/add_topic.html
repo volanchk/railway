@@ -1,0 +1,15 @@
+{% extends "forms.html" %}
+
+{% block content %}
+
+<form style="margin-left: 40%;
+             margin-top: 15%"
+      method="POST"
+      action="">
+
+    {% csrf_token %}
+    <input type="text" name="topic" placeholder="topic"><br>
+    <input type="submit" value="Add topic!" style="color: green; margin-top: 10px; margin-left: 78px">
+</form>
+
+{% endblock %}
