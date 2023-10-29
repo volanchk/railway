@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from .forms import BooksForm, TopicsForm
 from .models import Topics, Books, Votes
 from matplotlib.figure import Figure
-
+from bestbook.settings import BASE_DIR
 
 # The election function began to grow dangerously large,
 # so I've decided to move plot creation in a separate function.
@@ -20,7 +20,7 @@ def create_plot(topic, titles, voices):
                    label=topic)
     ax.bar_label(votes)
     ax.set_title(f'{topic}')
-    path = f"static/scores/{topic}.png"
+    path = BASE_DIR / f"static/scores/{topic}.png"
 
     fig.savefig(path)
 
