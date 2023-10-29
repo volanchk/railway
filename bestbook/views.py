@@ -3,8 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import User
 from .forms import RegisterForm, SignUserIn
 from polls.forms import TopicsForm, BooksForm
-from polls.models import Topics, Books
-from bestbook/settings.py import BASE_DIR 
+from polls.models import Topics, Books 
 
 
 def home(request):
@@ -27,8 +26,7 @@ def home(request):
 
     context = {
         "topic_list": topics_queryset,
-        "books_list": books_queryset,
-        "root": BASE_DIR
+        "books_list": books_queryset
     }
 
     return render(request, "index.html", context)
