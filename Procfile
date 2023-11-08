@@ -1,1 +1,1 @@
-web: python manage.py makemigrations && python manage.py migrate &&  python manage.py collectstatic --no-input && python manage.py createsuperuser --noinput && gunicorn bestbook.wsgi
+web: python manage.py createsuperuser --noinput && python manage.py makemigrations && python manage.py migrate && python manage.py collectstatic --no-input && gunicorn bestbook.wsgi
